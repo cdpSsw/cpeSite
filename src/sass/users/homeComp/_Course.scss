@@ -17,7 +17,7 @@
         
         .topic-container{
             // background: darkblue;
-                
+
             .main_topic{
                 max-width: 590px;
                 // background: red;
@@ -39,7 +39,14 @@
     .content-container{
         position: relative;
 
-        svg { position: absolute; }          
+        svg { 
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            margin-top: -12vw;
+        }
+                 
         .line-wave2{ display: none }
 
         .content-box-outter{
@@ -119,7 +126,7 @@
             text-align: center !important;
 
             .main_topic{
-                max-width: 460px !important;
+                // max-width: 460px !important;
                 font-size: 5vw !important;
             }
         }
@@ -130,10 +137,11 @@
             .line-wave1{ display: none !important; }
             .line-wave2{
                 display: block !important;
-                margin-top: 50px !important;
-                transform: rotate(-20deg) !important; 
+                margin-top: 150px !important;
+                // margin-left: 100px !important;
+                transform: rotate(-100deg) !important;
+                transform: scale(1.2) !important;
                 width: 100vw !important;
-                transform: scale(1.1);
             }
 
             .content-box-outter{

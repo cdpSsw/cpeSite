@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const emblem = "/emblem/emblem_white.png";
+import emblem from "/public/emblem/emblem_white.png";
 
 const Nav = () => {
   const linkList = [

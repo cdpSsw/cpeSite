@@ -7,6 +7,7 @@ import Header from './homeComp/Header';
 import Activities from './homeComp/Activities';
 import Highlight from './homeComp/Highlight';
 import Course from './homeComp/Course';
+import Team from './homeComp/Team';
 import CareerP from './homeComp/CareerP';
 import Exp from './homeComp/Exp';
 
@@ -18,8 +19,9 @@ const Homepages = () => {
       <Activities />
       <Highlight />
       <Course />
+      <Team />
       <CareerP />
-      <Exp />
+      {/* <Exp /> */}
     </>
   )
 }

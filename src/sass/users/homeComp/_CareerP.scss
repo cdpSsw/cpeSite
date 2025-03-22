@@ -1,11 +1,19 @@
 @use "../../var.scss";
 
 .careerP-container {
-    @include var.center-content;
-    padding: 3vw;
-    background: var.$black;
-    flex-wrap: wrap;
-    
+  @include var.center-content;
+  padding: 3vw;
+  background: var.$black;
+  // flex-wrap: wrap;
+  flex-direction: column;
+
+  .text-container{
+    color: var.$white;
+    width: 350px;
+
+    .desc{ color: var.$dim_white;}
+  }
+
   .card-spotlight {
     cursor: pointer;
     position: relative;
@@ -15,23 +23,25 @@
     padding: 2rem;
     overflow: hidden;
     margin: 16px;
-    width: 360px;
+    // width: 360px;
     // height: 200px;
     color: var.$white;
     text-align: start;
     --mouse-x: 50%;
     --mouse-y: 50%;
     --spotlight-color: rgba(255, 255, 255, 0.05);
-    
-    ion-icon{
-        font-size: 32px;
-        margin-bottom: 16px;
+
+    ion-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
     }
-    
-    .topic{
-        font-size: 24px;
+
+    .topic {
+      font-size: 24px;
     }
-    .desc{ color: #ffffff49 }
+    .desc {
+      color: #ffffff49;
+    }
   }
 
   .card-spotlight::before {
