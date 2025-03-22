@@ -62,8 +62,8 @@ const Highlight = () => {
                 </section>
                 
                 <section className="right-side col-md-3">
+                    <span className='year-countup'>
                     <p className="sub1">{highlight.sub1}</p>
-                    <span>
                         <CountUp
                             from={1500}
                             to={highlight.sub1_num}
@@ -75,8 +75,8 @@ const Highlight = () => {
                         {" "} CE
                     </span>
                     <hr />
+                    <span className='num-countup'>
                     <p className="sub2">{highlight.sub2}</p>
-                    <span>
                         ~ {" "}
                         <CountUp
                             from={800}

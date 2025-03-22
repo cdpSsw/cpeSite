@@ -6,7 +6,7 @@
     background: var.$black;
     padding: 3vw 8vw;
     // background: red;
-    height: 70vh;
+    height: auto;
     width: 100%;
 
     .highlight-box{
@@ -38,16 +38,18 @@
             .topic-container,
             .desc-container{
                 overflow: hidden;
+                height: auto;
             }
             .topic{
-                width: 450px;
+                max-width: 450px;
                 font-size: 32px;
             }
     
             .desc{
-                width: 550px;
+                max-width: 550px;
                 margin-top: 16px;
                 font-size: 16px;
+                line-height: 32px;
             }
         }
     
@@ -58,8 +60,7 @@
             justify-content: center;
             align-items: flex-end;
             // text-align: end;
-            background: none !important;
-            background: red;
+            background: none;
     
             .sub1,
             .sub2{
@@ -74,4 +75,45 @@
             hr{ width: 80px; margin: 24px 0 16px 0; } 
         }
     }
+}
+
+@media screen and (max-width: 887px) {
+    .right-side{ span{  font-size: 24px !important;} }
+}
+
+@media screen and (max-width: 770px) {
+    .left-side{
+        // background: darkblue !important;
+        margin-bottom: -80px !important;
+    }
+
+    .right-side{
+        // background: red !important;
+        flex-direction: row !important;
+
+        .year-countup,
+        .num-countup{
+            // background: darkgoldenrod !important;
+            margin: 0 16px !important;
+            margin-bottom: 24px !important;
+        }
+
+        hr {
+            background: var.$white;
+            width: 1px !important;
+            height: 80px;
+            border: none;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+    }
+}
+
+@media screen and (max-width: 451px) {
+    .right-side{ span{  font-size: 24px !important;} }
+}
+
+@media screen and (max-width: 370px) {
+    .right-side{ span{  font-size: 18px !important;} }
 }

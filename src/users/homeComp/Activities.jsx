@@ -3,6 +3,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/scss";
+
 import ev1 from "/public/users/home-assets/exposter/ev1.png";
 import ev2 from "/public/users/home-assets/exposter/ev2.png";
 import ev3 from "/public/users/home-assets/exposter/130.png";
@@ -61,14 +64,16 @@ const Activities = () => {
 
       img.addEventListener("mouseenter", () => {
         gsap.to(img, { scale: 1.1, filter: "grayscale(0)", duration: 0.3 });
-        gsap.fromTo(text1Refs.current[idx], 
+        gsap.fromTo(
+          text1Refs.current[idx],
           { y: 100, opacity: 0 },
-          { y: 0, opacity: 1, duration: .3, ease: "power2.inOut" }
+          { y: 0, opacity: 1, duration: 0.3, ease: "power2.inOut" }
         );
 
-        gsap.fromTo(text2Refs.current[idx], 
+        gsap.fromTo(
+          text2Refs.current[idx],
           { y: -100, opacity: 0 },
-          { y: 0, opacity: 1, duration: .3, ease: "power2.inOut" }
+          { y: 0, opacity: 1, duration: 0.3, ease: "power2.inOut" }
         );
 
         // Reset ตัวอื่นให้กลับเป็น opacity 0
@@ -79,8 +84,16 @@ const Activities = () => {
               filter: "grayscale(100%)",
               duration: 0.3,
             });
-            gsap.to(text1Refs.current[otherIdx], { opacity: 0, duration: .3, ease: "power2.inOut" });
-            gsap.to(text2Refs.current[otherIdx], { opacity: 0, duration: .3, ease: "power2.inOut" });
+            gsap.to(text1Refs.current[otherIdx], {
+              opacity: 0,
+              duration: 0.3,
+              ease: "power2.inOut",
+            });
+            gsap.to(text2Refs.current[otherIdx], {
+              opacity: 0,
+              duration: 0.3,
+              ease: "power2.inOut",
+            });
           }
         });
       });
@@ -88,8 +101,16 @@ const Activities = () => {
       img.addEventListener("mouseleave", () => {
         if (idx !== 1) {
           gsap.to(img, { scale: 1, filter: "grayscale(100%)", duration: 0.3 });
-          gsap.to(text1Refs.current[idx], { opacity: 0, duration: .3, ease: "power2.inOut" });
-          gsap.to(text2Refs.current[idx], { opacity: 0, duration: .3, ease: "power2.inOut" });
+          gsap.to(text1Refs.current[idx], {
+            opacity: 0,
+            duration: 0.3,
+            ease: "power2.inOut",
+          });
+          gsap.to(text2Refs.current[idx], {
+            opacity: 0,
+            duration: 0.3,
+            ease: "power2.inOut",
+          });
 
           // คืนค่าเริ่มต้นให้ index 1
           gsap.to(imgRefs.current[1], {
@@ -97,8 +118,16 @@ const Activities = () => {
             filter: "grayscale(0)",
             duration: 0.3,
           });
-          gsap.to(text1Refs.current[1], { opacity: 1, duration: .3, ease: "power2.inOut" });
-          gsap.to(text2Refs.current[1], { opacity: 1, duration: .3, ease: "power2.inOut" });
+          gsap.to(text1Refs.current[1], {
+            opacity: 1,
+            duration: 0.3,
+            ease: "power2.inOut",
+          });
+          gsap.to(text2Refs.current[1], {
+            opacity: 1,
+            duration: 0.3,
+            ease: "power2.inOut",
+          });
         }
       });
     });
@@ -115,26 +144,62 @@ const Activities = () => {
             alt={activity.topic}
             onClick={() => setSelectedImg(activity.poster)} // แสดง Overlay
           />
-          <section
-            className="text-container"
-          > 
+          <section className="text-container">
             <section className="topic-container">
               <h1
-                ref={(el) => (text1Refs.current[idx] = el)} 
+                ref={(el) => (text1Refs.current[idx] = el)}
                 className="topic"
-                >{activity.topic}
+              >
+                {activity.topic}
               </h1>
             </section>
             <section className="desc-container">
-              <p 
-                ref={(el) => (text2Refs.current[idx] = el)}
-                className="desc"
-              >{activity.description}
+              <p ref={(el) => (text2Refs.current[idx] = el)} className="desc">
+                {activity.description}
               </p>
             </section>
           </section>
         </section>
       ))}
+        
+      {/* <Swiper
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={1}
+        className="mySwiper"
+      >
+        {activities.map((activity, idx) => (
+          <SwiperSlide>
+            <section className="content-swiper">
+              <img
+                ref={(el) => (imgRefs.current[idx] = el)}
+                key={idx}
+                src={activity.poster}
+                alt={activity.topic}
+                onClick={() => setSelectedImg(activity.poster)} // แสดง Overlay
+              />
+              <section className="text-container">
+                <section className="topic-container">
+                  <h1
+                    ref={(el) => (text1Refs.current[idx] = el)}
+                    className="topic"
+                  >
+                    {activity.topic}
+                  </h1>
+                </section>
+                <section className="desc-container">
+                  <p
+                    ref={(el) => (text2Refs.current[idx] = el)}
+                    className="desc"
+                  >
+                    {activity.description}
+                  </p>
+                </section>
+              </section>
+            </section>
+          </SwiperSlide>
+        ))}
+      </Swiper> */}
 
       {/* Overlay แสดงภาพ Original */}
       {selectedImg && (
