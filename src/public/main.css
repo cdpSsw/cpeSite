@@ -167,9 +167,24 @@
   align-items: center;
   text-align: center;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   background: #060606;
   overflow: hidden;
+}
+.header-container .header-content {
+  z-index: 1;
+  margin-top: -150px;
+}
+.header-container .header-content .text-container {
+  color: #F7F7F9;
+}
+.header-container .header-content .text-container .titleTH {
+  font-size: 2vw;
+}
+.header-container .header-content .text-container .titleEN {
+  font-size: 9vw;
+  font-weight: 700;
+  line-height: 7vw;
 }
 .header-container #lights {
   width: 100%;
@@ -533,7 +548,7 @@
     margin: 16px 0 !important;
   }
   .course-container .content-container .content-box-outter .content-box-inner .desc {
-    font-size: 18px !important;
+    font-size: 14px !important;
   }
 }
 .team-container {
@@ -684,7 +699,8 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 10vw 3vw;
+  padding: 0 3vw;
+  height: 100vh;
   background: #060606;
   flex-direction: column;
 }
@@ -790,6 +806,89 @@
 }
 .faqs-container .accordion .accordion-item .accordion-body {
   color: #D2D2D2;
+}
+
+.contact-container {
+  background: #060606;
+  width: 100%;
+  height: 100vh;
+}
+.contact-container .content-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 3vw;
+  width: 100%;
+  height: auto;
+  background-image: url("/public/users/pages/map.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #F7F7F9;
+  position: relative;
+  z-index: 10;
+}
+.contact-container .content-container .content-box {
+  background: #060606;
+  text-align: center;
+  width: 450px;
+  height: 490px;
+  padding: 2vw;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 12px 0 #0043C0;
+}
+.contact-container .content-container .content-box .text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact-container .content-container .content-box .text-container .main_title {
+  font-size: 40px;
+}
+.contact-container .content-container .content-box .text-container .sub_title {
+  font-size: 20px;
+}
+.contact-container .content-container .content-box .text-container span {
+  color: #0043C0;
+}
+.contact-container .content-container .content-box .text-container hr {
+  width: 90%;
+  margin-bottom: 32px;
+}
+.contact-container .content-container .content-box .input-box input,
+.contact-container .content-container .content-box .input-box textarea {
+  background: none;
+}
+.contact-container .content-container .content-box .input-box input::placeholder,
+.contact-container .content-container .content-box .input-box textarea::placeholder {
+  color: #D2D2D2;
+}
+.contact-container .content-container .content-box button {
+  width: 100%;
+  color: #F7F7F9;
+  background: #0043C0;
+  border: 1px solid #0043C0;
+  border-radius: 8px;
+  padding: 8px 0;
+  margin-top: 24px;
+  transition: all 0.3s ease-out;
+}
+.contact-container .content-container .content-box button:hover {
+  color: #0043C0;
+  background: none;
+}
+
+@media screen and (max-width: 770px) {
+  .contact-container .content-container {
+    justify-content: center !important;
+    height: 500px !important;
+  }
+  .contact-container .content-container .content-box {
+    display: block !important;
+    visibility: visible !important;
+    width: 320px !important;
+    height: 490px !important;
+    padding: 32px !important;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

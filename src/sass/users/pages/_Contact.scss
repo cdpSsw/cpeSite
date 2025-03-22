@@ -1,0 +1,96 @@
+@use '../../var.scss';
+
+.contact-container{
+    background: var.$black;
+    width: 100%;
+    height: 100vh;
+
+    .content-container{
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 3vw;
+        width: 100%;
+        height: auto;
+        // background: darkblue;
+        background-image: url('/public/users/pages/map.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: var.$white;
+        position: relative;
+        z-index: 10;
+
+        .content-box{
+            background: var.$black;
+            text-align: center;
+            width: 450px;
+            height: 490px;
+            padding: 2vw;
+            border-radius: 0 0 16px 16px;
+            box-shadow: 0 12px 0 var.$blue;
+
+            .text-container{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .main_title{ font-size: 40px; }
+                .sub_title{ font-size: 20px; }
+
+                span{ color: var.$blue; }
+                hr{ 
+                    width: 90%;
+                    margin-bottom: 32px;
+                }
+            }
+
+            .input-box{
+                input,
+                textarea{
+                    background: none;
+
+                    &::placeholder{
+                        color: var.$dim_white;
+                    }
+                }
+            }
+
+            button{
+                width: 100%;
+                color: var.$white;
+                background: var.$blue;
+                border: 1px solid var.$blue;
+                border-radius: 8px;
+                padding: 8px 0;
+                margin-top: 24px;
+                transition: all .3s ease-out;
+
+                &:hover{
+                    color: var.$blue;
+                    background: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .contact-container{
+        // background: darkseagreen !important;
+        
+        .content-container {
+            justify-content: center !important;
+            // background: darkcyan !important;
+            height: 500px !important;
+
+            .content-box {
+                display: block !important;
+                visibility: visible !important;
+                // border: 2px solid yellow;
+                width: 320px !important;
+                height: 490px !important; 
+                padding: 32px !important;
+                // background: red;
+            }
+        }
+    }
+}

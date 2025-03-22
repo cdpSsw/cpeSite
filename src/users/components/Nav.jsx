@@ -6,11 +6,10 @@ import emblem from "/public/emblem/emblem_white.png";
 const Nav = () => {
   const linkList = [
     { name: "home", path: "/" },
-    { name: "showcase", path: "" },
     { name: "activities", path: "" },
     { name: "coop", path: "" },
     { name: "cpeclub", path: "" },
-    { name: "contact", path: "" },
+    { name: "contact", path: "/Contact" },
   ];
   return (
     <main className="nav-container">

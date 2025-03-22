@@ -3,12 +3,17 @@ import React from "react";
 import Hyperspeed from "../components/Hyperspeed";
 
 const Header = () => {
+  const headers = [{ titleTH: '{ วิศวกรรมคอมพิวเตอร์ }', titleEN1: 'COMPUTER', titleEN2: 'ENGINEERING'}]
   return (
     <main className="header-container">
       <article className="header-content">
-        <section className="text-container">
-          <h1 className="title titleTH"></h1>
-        </section>
+        {headers.map((title, idx) => (
+            <section className="text-container" key={idx}>
+              <h1 className="title titleTH">{title.titleTH}</h1>
+              <h1 className="title titleEN">{title.titleEN1}</h1>
+              <h1 className="title titleEN">{title.titleEN2}</h1>
+            </section>
+        ))}
       </article>
 
       <Hyperspeed

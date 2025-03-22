@@ -68,10 +68,13 @@ const Team = () => {
     <main ref={conRef} className="team-container">
       <article className="team-box-outer row">
         {team_info.map((info, idx) => (
-          <section key={idx} className="flip col-md-4">
+          <section 
+            ref={(el) => (imgRefs.current[idx] = el)}
+            key={idx} 
+            className="flip col-md-4"
+          >
             <section key={idx} className="team-card front">
               <img
-                ref={(el) => (imgRefs.current[idx] = el)}
                 src={info.img}
                 alt={info.fname}
               />

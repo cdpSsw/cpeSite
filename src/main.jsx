@@ -5,9 +5,11 @@ import { RouterProvider, createHashRouter } from 'react-router-dom'
 
 // users
 import Homepages from './users/Homepages'
+import Contact from './users/pages/Contact'
 
 const router = createHashRouter([
   { path: '/', element: <Homepages /> },
+  { path: '/Contact', element: <Contact /> },
 ]);
 
 const App = () => {

@@ -2,9 +2,9 @@
 
 .careerP-container {
   @include var.center-content;
-  padding: 10vw 3vw;
+  padding: 0 3vw;
+  height: 100vh;
   background: var.$black;
-  // flex-wrap: wrap;
   flex-direction: column;
 
   .text-container{
