@@ -1,0 +1,77 @@
+@use '../../var.scss';
+
+.highlight-container{
+    display: flex;
+    color: var.$white;
+    background: var.$black;
+    padding: 3vw 8vw;
+    // background: red;
+    height: 70vh;
+    width: 100%;
+
+    .highlight-box{
+        width: 100%;
+
+        .left-side{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 400 !important;
+    
+            .line-1{
+                display: flex;
+                margin-bottom: 24px;
+                .hashtag,
+                .type{
+                    padding: 8px 16px;
+                    border: 1px solid var.$white;
+                    font-size: 16px;
+                }
+    
+                .hashtag{ border-radius: 50%; }
+                .type{
+                    margin-left: 8px;
+                    border-radius: 32px;
+                }
+            }
+    
+            .topic-container,
+            .desc-container{
+                overflow: hidden;
+            }
+            .topic{
+                width: 450px;
+                font-size: 32px;
+            }
+    
+            .desc{
+                width: 550px;
+                margin-top: 16px;
+                font-size: 16px;
+            }
+        }
+    
+        .right-side{
+            margin-top: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            // text-align: end;
+            background: none !important;
+            background: red;
+    
+            .sub1,
+            .sub2{
+                font-size: 16px;
+            }
+
+            span{ 
+                font-size: 32px; 
+                line-height: 8px;
+                margin: 0;
+            }
+            hr{ width: 80px; margin: 24px 0 16px 0; } 
+        }
+    }
+}

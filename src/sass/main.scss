@@ -1,0 +1,15 @@
+// styles
+@use './var.scss';
+
+// users
+// ... components
+@use './users/components/Nav';
+
+// ...  home-pages
+@use './users/homeComp/Header';
+@use './users/homeComp/Activities';
+@use './users/homeComp/Highlight';
+@use './users/homeComp/Exp';
+@use './users/homeComp/CareerP';
+
+// -----------------------------------------------------------------------------
