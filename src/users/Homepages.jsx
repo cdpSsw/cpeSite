@@ -9,7 +9,7 @@ import Highlight from './homeComp/Highlight';
 import Course from './homeComp/Course';
 import Team from './homeComp/Team';
 import CareerP from './homeComp/CareerP';
-import Exp from './homeComp/Exp';
+import Faqs from './homeComp/Faqs';
 
 const Homepages = () => {
   return (
@@ -21,7 +21,7 @@ const Homepages = () => {
       <Course />
       <Team />
       <CareerP />
-      {/* <Exp /> */}
+      <Faqs />
     </>
   )
 }

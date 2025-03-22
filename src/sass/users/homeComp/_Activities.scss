@@ -88,10 +88,42 @@
         object-fit: cover;
         object-position: top;
         scale: 1 !important;
-        border-radius: 24px;
+        border-radius: 16px;
         filter: grayscale(0) !important;
         transform: none !important;
       }
+
+      .text-container{
+        color: var.$white;
+        margin-top: 32px;
+        margin-bottom: 16px;
+        overflow: hidden;
+        opacity: 1 !important;
+        
+        .topic-container,
+        .desc-container{
+          overflow: hidden;
+        }
+  
+        .topic{ font-size: 32px; }
+        .desc{ 
+          font-size: 24px; 
+          color:var.$grey;
+        }
+      }
+    }
+
+    .swiper-pagination-bullet{
+      background: var.$blue;
+      transition: all .3s ease-out;
+    }
+
+    .swiper-pagination-bullet-active{
+      width: 30px;
+      background: linear-gradient(
+        90deg, var.$blue, var.$purple,
+      );
+      border-radius: 3px;
     }
   }
 }

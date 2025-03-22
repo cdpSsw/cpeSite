@@ -2,7 +2,7 @@
 
 .careerP-container {
   @include var.center-content;
-  padding: 3vw;
+  padding: 10vw 3vw;
   background: var.$black;
   // flex-wrap: wrap;
   flex-direction: column;
@@ -23,6 +23,7 @@
     padding: 2rem;
     overflow: hidden;
     margin: 16px;
+    margin-bottom: 32px;
     // width: 360px;
     // height: 200px;
     color: var.$white;
@@ -65,4 +66,8 @@
   .card-spotlight:focus-within::before {
     opacity: 0.6;
   }
+
+  .swiper{
+    width: 100% !important;
+  } 
 }
