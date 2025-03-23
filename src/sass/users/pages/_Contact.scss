@@ -1,96 +1,154 @@
-@use '../../var.scss';
+@use "../../var.scss";
 
-.contact-container{
-    background: var.$black;
-    width: 100%;
-    height: 100vh;
+.contact-container {
+  width: 100%;
+  height: 100vh;
+  background: var.$white;
 
-    .content-container{
-        display: flex;
-        justify-content: flex-end;
-        padding: 0 3vw;
-        width: 100%;
-        height: auto;
-        // background: darkblue;
-        background-image: url('/public/users/pages/map.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        color: var.$white;
-        position: relative;
-        z-index: 10;
+  .content-container {
+    position: relative;
+    padding: 3vw 8vw;
+    overflow: hidden;
 
-        .content-box{
+    .contact-deatils {
+      padding-right: 6vw;
+
+      .desc {
+        font-size: 12px;
+        color: var.$grey;
+      }
+
+      .contact-box-container {
+        .contact-box {
+          display: flex;
+          margin: 8px;
+          padding: 5px 8px;
+          background: none;
+          align-items: center;
+          border: 1px solid var.$dim_white;
+          border-radius: 8px;
+
+          ion-icon {
+            font-size: 16px;
+            padding: 12px;
+            color: var.$white;
             background: var.$black;
-            text-align: center;
-            width: 450px;
-            height: 490px;
-            padding: 2vw;
-            border-radius: 0 0 16px 16px;
-            box-shadow: 0 12px 0 var.$blue;
+            border-radius: 3px;
+            margin-right: 16px;
+          }
 
-            .text-container{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                .main_title{ font-size: 40px; }
-                .sub_title{ font-size: 20px; }
+          .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center !important;
+            justify-content: center;
+            text-align: start;
 
-                span{ color: var.$blue; }
-                hr{ 
-                    width: 90%;
-                    margin-bottom: 32px;
-                }
+            .title-box,
+            .desc-box {
+              margin: 0;
             }
 
-            .input-box{
-                input,
-                textarea{
-                    background: none;
-
-                    &::placeholder{
-                        color: var.$dim_white;
-                    }
-                }
+            .title-box {
+              font-size: 1.2vw;
+              width: 100%;
             }
+            .desc-box {
+              font-size: 0.9vw;
+            }
+          }
+        }
 
-            button{
-                width: 100%;
-                color: var.$white;
-                background: var.$blue;
-                border: 1px solid var.$blue;
-                border-radius: 8px;
-                padding: 8px 0;
-                margin-top: 24px;
-                transition: all .3s ease-out;
+        .address {
+          ion-icon {
+            font-size: 22px;
+            padding: 8px 12px;
+          }
+        }
+      }
+    }
 
-                &:hover{
-                    color: var.$blue;
-                    background: none;
-                }
+    .vl {
+      position: absolute;
+      border-left: 1px solid var.$black;
+      height: 500px;
+      left: 47%;
+    }
+
+    .get-in-touch {
+      hr {
+        width: 30%;
+      }
+
+      .input-box,
+      .send-mess-btn {
+        position: relative;
+        width: 80%;
+
+        input,
+        textarea{
+            &:focus{
+                box-shadow: none;
+                
             }
         }
+      }
+
+      .send-mess-btn {
+        cursor: pointer;
+        padding: 8px 0;
+        color: var.$white;
+        background: var.$black;
+        border: 1px solid var.$black;
+        border-radius: 8px;
+        transition: all 0.3s ease-out;
+
+        &:hover {
+          color: var.$black;
+          background-color: transparent;
+        }
+
+        &:disabled{
+            background: var.$dim_white;
+            border: 1px solid var.$dim_white;
+
+            &:hover { color: var.$white; }
+        }
+      }
     }
+  }
 }
 
-@media screen and (max-width: 770px) {
-    .contact-container{
-        // background: darkseagreen !important;
-        
-        .content-container {
-            justify-content: center !important;
-            // background: darkcyan !important;
-            height: 500px !important;
+@media screen and (max-width: 990px) {
+  .contact-container {
+    .content-container {
+      .contact-deatils {
+        .contact-box-container {
+          .contact-box {
+            width: 250px !important;
 
-            .content-box {
-                display: block !important;
-                visibility: visible !important;
-                // border: 2px solid yellow;
-                width: 320px !important;
-                height: 490px !important; 
-                padding: 32px !important;
-                // background: red;
+            .text-container {
+              .title-box {
+                font-size: 14px !important;
+              }
+              .desc-box {
+                font-size: 12px !important;
+              }
             }
+          }
         }
+      }
+
+      .vl {
+        display: none !important;
+      }
+
+      .get-in-touch {
+        .input-box,
+        .send-mess-btn {
+          width: 100% !important;
+        }
+      }
     }
+  }
 }
